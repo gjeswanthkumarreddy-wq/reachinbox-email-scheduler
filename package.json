@@ -1,0 +1,33 @@
+{
+  "name": "reachinbox-email-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack email job scheduler — ReachInbox hiring assignment",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "infra:up": "docker-compose up -d",
+    "infra:down": "docker-compose down",
+    "infra:down:volumes": "docker-compose down -v",
+    "infra:logs": "docker-compose logs -f",
+    "infra:ps": "docker-compose ps",
+    "migrate": "node scripts/migrate.js",
+    "verify": "node scripts/verify-infra.js",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:worker": "npm run dev --workspace=apps/worker",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace=packages/shared"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.3",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

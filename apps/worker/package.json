@@ -1,0 +1,30 @@
+{
+    "name":  "@reachinbox/worker",
+    "version":  "1.0.0",
+    "description":  "ReachInbox BullMQ email delivery worker",
+    "main":  "dist/index.js",
+    "scripts":  {
+                    "dev":  "ts-node-dev --respawn --transpile-only src/index.ts",
+                    "build":  "tsc",
+                    "start":  "node dist/index.js",
+                    "clean":  "rimraf dist",
+                    "test":  "ts-node-dev --transpile-only src/index.test.ts"
+                },
+    "dependencies":  {
+                         "@elastic/elasticsearch":  "^8.13.0",
+                         "@reachinbox/shared":  "*",
+                         "bullmq":  "^5.12.8",
+                         "dotenv":  "^16.4.5",
+                         "ioredis":  "^5.4.1",
+                         "nodemailer":  "^6.9.14",
+                         "pg":  "^8.11.3"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^20.12.12",
+                            "@types/nodemailer":  "^6.4.15",
+                            "@types/pg":  "^8.11.6",
+                            "rimraf":  "^5.0.0",
+                            "ts-node-dev":  "^2.0.0",
+                            "typescript":  "*"
+                        }
+}
